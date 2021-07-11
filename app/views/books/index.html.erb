@@ -12,6 +12,9 @@
 
      <div class='col-md-8 offset-md-1'>
        <h2>Books</h2>
+      <%= link_to "新しい順", books_path(sort: 'created_at DESC') %> | <%= link_to "評価の高い順", books_path(sort: 'rate DESC') %>
+      <!--= link_to '表示名', どこで表示_path(sort: '[変数名:DESCが昇順 ASCが降順]')変数名でソート-->
+      <!--**controllerのorder(params:sort]で並び替えパラメーターsortがviewで作成される-->
        <%= render 'books/index', books: @books %>
      </div>
   </div>
